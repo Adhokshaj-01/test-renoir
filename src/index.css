@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=Gravitas+One&family=Imperial+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shippori+Mincho&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 34 30% 96%;
+    --foreground: 354 53% 23%;
+
+    --card: 34 30% 96%;
+    --card-foreground: 354 53% 23%;
+
+    --popover: 34 30% 96%;
+    --popover-foreground: 354 53% 23%;
+
+    --primary: 354 53% 23%;
+    --primary-foreground: 34 30% 96%;
+
+    --secondary: 354 33% 35%;
+    --secondary-foreground: 34 30% 96%;
+
+    --muted: 34 20% 90%;
+    --muted-foreground: 354 33% 35%;
+
+    --accent: 44 59% 52%;
+    --accent-foreground: 354 53% 23%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 354 15% 80%;
+    --input: 354 15% 80%;
+    --ring: 354 53% 23%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border scroll-smooth;
+  }
+
+  body {
+    @apply bg-offwhite text-maroon font-montserrat;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-2 py-1 font-medium text-maroon hover:text-maroon-light transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .section-title {
+    @apply font-playfair text-maroon text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-gold;
+  }
+
+  .reveal-on-scroll {
+    @apply opacity-0 transform translate-y-10 transition-all duration-700 ease-out;
+  }
+
+  .reveal-on-scroll.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .portfolio-item {
+    @apply relative overflow-hidden;
+  }
+  
+  .portfolio-overlay {
+    @apply absolute inset-0 bg-maroon bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300;
+  }
+  
+  .portfolio-item:hover .portfolio-overlay {
+    @apply opacity-100;
+  }
+
+  .service-card {
+    @apply p-6 border border-transparent hover:border-gold transition-all duration-300 bg-white bg-opacity-50 hover:bg-opacity-90 shadow-sm hover:shadow-md rounded-md;
+  }
+}
+/* font */
+.imperial-text {
+  font-family: 'Imperial Script', cursive;
+}
+html{
+  scroll-behavior: smooth;
+}
